@@ -1,5 +1,5 @@
 {
-    "name": "magenx/module-stripe-shared-payment-tokens",
+    "name": "magenxcommerce/module-stripe-shared-payment-tokens",
     "description": "Charges Stripe Shared Payment Tokens (spt_…) from agentic-commerce platforms through the stock Stripe Payments placeOrder flow.",
     "type": "magento2-module",
     "license": "MIT",

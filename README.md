@@ -49,7 +49,7 @@ anything.
 ## Install
 
 ```bash
-composer require magenx/module-stripe-shared-payment-tokens
+composer require magenxcommerce/module-stripe-shared-payment-tokens
 bin/magento module:enable Magenx_StripeSharedPaymentTokens
 bin/magento setup:upgrade
 bin/magento cache:flush
@@ -64,7 +64,7 @@ longer sits in Stripe's vendor namespace. The config paths
 
 ```bash
 rm -rf app/code/StripeIntegration/SharedPaymentTokens     # or: composer remove <old package>
-composer require magenx/module-stripe-shared-payment-tokens
+composer require magenxcommerce/module-stripe-shared-payment-tokens
 # drop any leftover 'StripeIntegration_SharedPaymentTokens' line from app/etc/config.php
 bin/magento module:enable Magenx_StripeSharedPaymentTokens
 bin/magento setup:upgrade
