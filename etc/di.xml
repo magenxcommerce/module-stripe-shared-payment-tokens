@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Brackets the PaymentIntent confirmation of an order paid with an spt_ token. -->
+    <type name="StripeIntegration\Payments\Model\PaymentElement">
+        <plugin name="stripe_shared_payment_tokens_confirm" type="Magenx\StripeSharedPaymentTokens\Plugin\PaymentElementPlugin"/>
+    </type>
+    <!-- Swaps `payment_method` for `payment_method_data[shared_payment_granted_token]`. -->
+    <type name="StripeIntegration\Payments\Helper\PaymentIntent">
+        <plugin name="stripe_shared_payment_tokens_confirm_params" type="Magenx\StripeSharedPaymentTokens\Plugin\ConfirmParamsPlugin"/>
+    </type>
+    <!-- Serves a client on the SPT-capable API version while that confirmation runs. -->
+    <type name="StripeIntegration\Payments\Model\Config">
+        <plugin name="stripe_shared_payment_tokens_api_version" type="Magenx\StripeSharedPaymentTokens\Plugin\StripeClientPlugin"/>
+    </type>
+    <!-- One scope per request: the three plugins above must see the same instance. -->
+    <type name="Magenx\StripeSharedPaymentTokens\Model\ConfirmScope" shared="true"/>
+</config>
