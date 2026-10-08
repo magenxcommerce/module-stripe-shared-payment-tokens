@@ -1,0 +1,19 @@
+{
+    "name": "magenxcommerce/module-stripe-shared-payment-tokens",
+    "description": "Charges Stripe Shared Payment Tokens (spt_…) from agentic-commerce platforms through the stock Stripe Payments placeOrder flow.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": "~8.3.0||~8.4.0||~8.5.0",
+        "stripe/module-payments": "^4.6",
+        "magento/framework": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magenx\\StripeSharedPaymentTokens\\": ""
+        }
+    }
+}
