@@ -38,7 +38,7 @@ class PaymentElementPlugin
     {
         $payment = $order->getPayment();
         $token = $payment ? $payment->getAdditionalInformation('token') : null;
-        if (!Config::isSharedPaymentToken($token)) {
+        if (!$this->config->isSharedPaymentToken($token)) {
             return $proceed($order);
         }
 
