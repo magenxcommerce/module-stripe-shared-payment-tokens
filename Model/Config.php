@@ -33,7 +33,7 @@ class Config
         return trim((string)$this->scopeConfig->getValue(self::XML_PATH_API_VERSION, ScopeInterface::SCOPE_STORE, $storeId));
     }
 
-    public static function isSharedPaymentToken(mixed $token): bool
+    public function isSharedPaymentToken(mixed $token): bool
     {
         return is_string($token) && str_starts_with($token, self::TOKEN_PREFIX);
     }
